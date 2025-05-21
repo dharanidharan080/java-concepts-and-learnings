@@ -6,17 +6,20 @@ public class E extends Thread{
 		
 			try {
 				A a=new A();
-				System.out.println("addtion"+" "+a.add());
+				a.run();
+				a.join();
 				Thread.sleep(2000);
 				B b=new B();
-				
-				System.out.println("subtraction"+" "+b.subtract());
+				b.run();
+				b.join();
 				Thread.sleep(2000);
 				C c=new C();
-				System.out.println("multiplication"+" "+c.multiply());
+				c.run();
+				c.join();
 				Thread.sleep(2000);
 				D d=new D();
-				System.out.println("division"+" "+d.divide());
+				d.run();
+				d.join();
 			} catch (InterruptedException e) {
 				
 				e.printStackTrace();

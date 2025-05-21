@@ -1,16 +1,25 @@
-import java.util.Scanner;
 
-public class A {
-	static Scanner sc= new Scanner(System.in);
-	public int add() {
-		Calculator cal=new Calculator();
-		System.out.println("enter the value for a and b for adding:");
-		int a=sc.nextInt();
-		int b=sc.nextInt();
-		int c=cal.Addtion(a, b);
-		return c;
+
+public class A extends Thread{
+	 
+		 @Override
+			public void run() {
+				Calculator c=new Calculator();
+				c.start();
+				try {
+					c.join();
+					Thread.sleep(2000);
+					int res=c.Addtion(2, 3);
+					System.out.println("addition result"+res);
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+				
+				
+			}
 		
 		
-	}
+	 }
 
-}
+

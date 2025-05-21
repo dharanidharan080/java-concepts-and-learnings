@@ -1,16 +1,8 @@
-import java.util.Scanner;
-
-public class C {
-	static Scanner sc= new Scanner(System.in);
-	public int multiply() {
-		Calculator cal=new Calculator();
-		System.out.println("enter the value for a and b for multiplying:");
-		int a=sc.nextInt();
-		int b=sc.nextInt();
-		int c=cal.Multiplication(a, b);
-		return c;
-		
-		
-	}
-
+public class C extends Thread {
+    @Override
+    public void run() {
+        Calculator c = new Calculator();
+        int res = c.Multiplication(2, 3);
+        System.out.println("Multiplication result: " + res);
+    }
 }
